@@ -5,17 +5,19 @@ const confirmBtn = document.querySelector(".confirmBtn");
 
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
-  this.id = crypto.randomUUID();
-}
+class Book {
+  constructor(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+    this.id = crypto.randomUUID();
+  }
 
-Book.prototype.toggleReadStatus = function (event) {
-  this.readStatus = !this.readStatus;
-};
+  toggleReadStatus() {
+    this.readStatus = !this.readStatus;
+  }
+}
 
 function addBookToLibrary(title, author, pages, readStatus) {
   const newBook = new Book(title, author, pages, readStatus);
