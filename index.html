@@ -12,8 +12,55 @@
       <h1 class="heading">Library</h1>
       <button class="new-book">+</button>
     </header>
-    <div class="library">
-      
-    </div>
+
+    <div class="library"></div>
+
+    <dialog class="new-book-dialog">
+      <h1>Add a book</h1>
+      <form method="dialog">
+        <div class="form-control-group">
+          <label for="title">Book title</label>
+          <input type="text" name="title" id="title" required />
+        </div>
+
+        <div class="form-control-group">
+          <label for="author">Book author</label>
+          <input type="text" name="author" id="author" required />
+        </div>
+
+        <div class="form-control-group">
+          <label for="pages">Number of pages</label>
+          <input type="number" name="pages" id="pages" min="1" required />
+        </div>
+
+        <div class="form-control-group">
+          <label>Read Status</label>
+          <div>
+            <div class="radio-group">
+              <input
+                type="radio"
+                value="not-read"
+                name="read-status"
+                id="not-read"
+                checked
+              />
+              <label for="not-read">Not read</label>
+            </div>
+
+            <div class="radio-group">
+              <input type="radio" value="read" name="read-status" id="read" />
+              <label for="read">Read</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button formmethod="dialog" value="cancel" class="cancelBtn" formnovalidate>
+            Cancel
+          </button>
+          <button class="confirmBtn" value="submitted">Add book</button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>
